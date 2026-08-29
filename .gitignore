@@ -1,0 +1,9 @@
+.DS_Store
+xcuserdata/
+*.xcuserstate
+*.xcbkptlist
+DerivedData/
+build/
+*.hmap
+*.ipa
+!**/xcschemes/*.xcscheme
