@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		92F2A3723042E585006081D6 /* anisync Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 92F2A3713042E585006081D6 /* anisync Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		92F2A37C3042E585006081D6 /* anisync Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 92F2A37B3042E585006081D6 /* anisync Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		92F2A37C3042E585006081D6 /* AniSync Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 92F2A37B3042E585006081D6 /* AniSync Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				92F2A37C3042E585006081D6 /* anisync Extension.appex in Embed Foundation Extensions */,
+				92F2A37C3042E585006081D6 /* AniSync Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -733,6 +733,7 @@
 				INFOPLIST_FILE = "macOS (App)/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = AniSync;
 				INFOPLIST_KEY_CFBundleName = AniSync;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -777,6 +778,7 @@
 				INFOPLIST_FILE = "macOS (App)/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = AniSync;
 				INFOPLIST_KEY_CFBundleName = AniSync;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
