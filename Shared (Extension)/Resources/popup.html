@@ -1,11 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AniSync</title>
     <link rel="stylesheet" href="popup.css">
     <script type="module" src="popup.js"></script>
 </head>
 <body>
-    <strong>Hello World!</strong>
+    <main>
+        <header class="app-header">
+            <div class="mark" aria-hidden="true">✓</div>
+            <div>
+                <h1>AniSync</h1>
+                <p id="account-name" class="secondary" data-i18n="loading">Loading…</p>
+            </div>
+        </header>
+
+        <section id="message" class="callout hidden" role="status" aria-live="polite"></section>
+
+        <section id="current" class="current-card hidden" aria-labelledby="current-title">
+            <div>
+                <p id="current-title" class="title"></p>
+                <p id="current-episode" class="secondary"></p>
+            </div>
+            <p class="threshold"><span aria-hidden="true">◴</span> <span data-i18n="syncs_at_threshold">Syncs at 80%</span></p>
+            <button id="rewatch" class="plain-button hidden" type="button" data-i18n="start_rewatch">Start Rewatch</button>
+        </section>
+
+        <section id="mapping" class="mapping hidden" aria-labelledby="mapping-title">
+            <h2 id="mapping-title" data-i18n="choose_title">Choose the AniList title</h2>
+            <p class="secondary" data-i18n="mapping_explanation">AniSync saved this episode. Confirm its title once to finish syncing.</p>
+            <form id="search-form" role="search">
+                <label class="visually-hidden" for="search" data-i18n="search_anilist">Search AniList</label>
+                <input id="search" type="search" autocomplete="off" data-i18n-placeholder="search_anilist" placeholder="Search AniList">
+                <button type="submit" data-i18n="search">Search</button>
+            </form>
+            <div id="results" class="results" aria-live="polite"></div>
+        </section>
+
+        <section id="activity-section" class="hidden" aria-labelledby="activity-title">
+            <div class="section-heading">
+                <h2 id="activity-title" data-i18n="recent_activity">Recent Activity</h2>
+            </div>
+            <ol id="activity" class="activity-list"></ol>
+        </section>
+
+        <section id="empty" class="empty hidden">
+            <span class="empty-symbol" aria-hidden="true">◴</span>
+            <p data-i18n="open_supported_episode">Open an episode on a supported Anime365 site.</p>
+        </section>
+
+        <footer>
+            <button id="connect" class="primary hidden" type="button" data-i18n="connect_anilist">Connect AniList</button>
+            <button id="open-app" class="plain-button" type="button" data-i18n="open_anisync">Open AniSync</button>
+        </footer>
+    </main>
 </body>
 </html>

@@ -6,37 +6,23 @@
 //
 
 import SafariServices
-import os.log
+import os
 
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
+    private let service = AniSyncService()
+    private let logger = Logger(subsystem: "me.heeka.anisync", category: "NativeMessaging")
 
     func beginRequest(with context: NSExtensionContext) {
         let request = context.inputItems.first as? NSExtensionItem
+        let message = request?.userInfo?[SFExtensionMessageKey] as? [String: Any] ?? [:]
+        let command = message["command"] as? String ?? "invalid"
+        logger.info("Handling native command: \(command, privacy: .public)")
 
-        let profile: UUID?
-        if #available(iOS 17.0, macOS 14.0, *) {
-            profile = request?.userInfo?[SFExtensionProfileKey] as? UUID
-        } else {
-            profile = request?.userInfo?["profile"] as? UUID
+        Task {
+            let payload = await service.handleNativeMessage(message)
+            let response = NSExtensionItem()
+            response.userInfo = [SFExtensionMessageKey: payload]
+            context.completeRequest(returningItems: [response], completionHandler: nil)
         }
-
-        let message: Any?
-        if #available(iOS 15.0, macOS 11.0, *) {
-            message = request?.userInfo?[SFExtensionMessageKey]
-        } else {
-            message = request?.userInfo?["message"]
-        }
-
-        os_log(.default, "Received message from browser.runtime.sendNativeMessage: %@ (profile: %@)", String(describing: message), profile?.uuidString ?? "none")
-
-        let response = NSExtensionItem()
-        if #available(iOS 15.0, macOS 11.0, *) {
-            response.userInfo = [ SFExtensionMessageKey: [ "echo": message ] ]
-        } else {
-            response.userInfo = [ "message": [ "echo": message ] ]
-        }
-
-        context.completeRequest(returningItems: [ response ], completionHandler: nil)
     }
-
 }
