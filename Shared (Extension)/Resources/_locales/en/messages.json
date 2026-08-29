@@ -1,10 +1,38 @@
 {
     "extension_name": {
-        "message": "anisync",
+        "message": "AniSync",
         "description": "The display name for the extension."
     },
     "extension_description": {
-        "message": "This is anisync. You should tell us what your extension does here.",
+        "message": "Safely sync watched Anime365 episodes to AniList.",
         "description": "Description of what the extension does."
-    }
+    },
+    "loading": { "message": "Loading…" },
+    "connected": { "message": "Connected" },
+    "not_connected": { "message": "AniList not connected" },
+    "syncs_at_threshold": { "message": "Syncs at 80%" },
+    "start_rewatch": { "message": "Start Rewatch" },
+    "choose_title": { "message": "Choose the AniList title" },
+    "mapping_explanation": { "message": "AniSync saved this episode. Confirm its title once to finish syncing." },
+    "search_anilist": { "message": "Search AniList" },
+    "search": { "message": "Search" },
+    "searching": { "message": "Searching…" },
+    "recent_activity": { "message": "Recent Activity" },
+    "open_supported_episode": { "message": "Open an episode on a supported Anime365 site." },
+    "connect_anilist": { "message": "Connect AniList" },
+    "open_anisync": { "message": "Open AniSync" },
+    "episode": { "message": "Episode $1" },
+    "episodes": { "message": "$1 episodes" },
+    "episode_not_identified": { "message": "Episode not identified" },
+    "anime365_episode": { "message": "Anime365 episode" },
+    "already_up_to_date": { "message": "Already up to date" },
+    "rewatch_synced": { "message": "Rewatch saved" },
+    "saved_to_anilist": { "message": "Saved to AniList" },
+    "native_unavailable": { "message": "Open AniSync to finish setup." },
+    "sync_conflict": { "message": "AniList changed. Open AniSync to review before anything is overwritten." },
+    "reconnect_to_finish": { "message": "Reconnect AniList to finish the episode saved on this Mac." },
+    "saved_will_retry": { "message": "This episode is saved on your Mac and will retry." },
+    "mapping_needed": { "message": "Confirm this title once to finish the saved sync." },
+    "private_browsing": { "message": "AniSync does not run in Private Browsing." },
+    "no_results": { "message": "No matching anime found." }
 }

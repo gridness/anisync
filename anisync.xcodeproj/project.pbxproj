@@ -55,9 +55,10 @@
 
 /* Begin PBXFileReference section */
 		92F2A3543042E585006081D6 /* anisync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = anisync.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		92F2A3663042E585006081D6 /* anisync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = anisync.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F2A3663042E585006081D6 /* AniSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F2A3713042E585006081D6 /* anisync Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "anisync Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		92F2A37B3042E585006081D6 /* anisync Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "anisync Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F2A37B3042E585006081D6 /* AniSync Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AniSync Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000000000000000000002 /* Configuration/Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configuration/Base.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -90,12 +91,7 @@
 		92F2A3A93042E585006081D6 /* Exceptions for "Shared (App)" folder in "anisync (macOS)" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"/Localized: Resources/Main.html",
 				Assets.xcassets,
-				Resources/Icon.png,
-				Resources/Script.js,
-				Resources/Style.css,
-				ViewController.swift,
 			);
 			target = 92F2A3653042E585006081D6 /* anisync (macOS) */;
 		};
@@ -112,6 +108,7 @@
 				Resources/_locales,
 				Resources/background.js,
 				Resources/content.js,
+				Resources/detector.js,
 				Resources/images,
 				Resources/manifest.json,
 				Resources/popup.css,
@@ -127,6 +124,7 @@
 				Resources/_locales,
 				Resources/background.js,
 				Resources/content.js,
+				Resources/detector.js,
 				Resources/images,
 				Resources/manifest.json,
 				Resources/popup.css,
@@ -135,6 +133,13 @@
 				SafariWebExtensionHandler.swift,
 			);
 			target = 92F2A37A3042E585006081D6 /* anisync Extension (macOS) */;
+		};
+		A10000000000000000000003 /* Exceptions for "macOS (App)" folder in "anisync (macOS)" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 92F2A3653042E585006081D6 /* anisync (macOS) */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -171,6 +176,9 @@
 		};
 		92F2A3673042E585006081D6 /* macOS (App) */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A10000000000000000000003 /* Exceptions for "macOS (App)" folder in "anisync (macOS)" target */,
+			);
 			path = "macOS (App)";
 			sourceTree = "<group>";
 		};
@@ -188,6 +196,11 @@
 				92F2A3AD3042E585006081D6 /* Exceptions for "macOS (Extension)" folder in "anisync Extension (macOS)" target */,
 			);
 			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		A10000000000000000000001 /* Shared (Core) */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Shared (Core)";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -227,6 +240,8 @@
 		92F2A3373042E584006081D6 = {
 			isa = PBXGroup;
 			children = (
+				A10000000000000000000002 /* Configuration/Base.xcconfig */,
+				A10000000000000000000001 /* Shared (Core) */,
 				92F2A33C3042E584006081D6 /* Shared (App) */,
 				92F2A3453042E585006081D6 /* Shared (Extension) */,
 				92F2A3563042E585006081D6 /* iOS (App) */,
@@ -241,9 +256,9 @@
 			isa = PBXGroup;
 			children = (
 				92F2A3543042E585006081D6 /* anisync.app */,
-				92F2A3663042E585006081D6 /* anisync.app */,
+				92F2A3663042E585006081D6 /* AniSync.app */,
 				92F2A3713042E585006081D6 /* anisync Extension.appex */,
-				92F2A37B3042E585006081D6 /* anisync Extension.appex */,
+				92F2A37B3042E585006081D6 /* AniSync Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -291,12 +306,13 @@
 			);
 			fileSystemSynchronizedGroups = (
 				92F2A3673042E585006081D6 /* macOS (App) */,
+				A10000000000000000000001 /* Shared (Core) */,
 			);
 			name = "anisync (macOS)";
 			packageProductDependencies = (
 			);
 			productName = "anisync (macOS)";
-			productReference = 92F2A3663042E585006081D6 /* anisync.app */;
+			productReference = 92F2A3663042E585006081D6 /* AniSync.app */;
 			productType = "com.apple.product-type.application";
 		};
 		92F2A3703042E585006081D6 /* anisync Extension (iOS) */ = {
@@ -335,12 +351,13 @@
 			);
 			fileSystemSynchronizedGroups = (
 				92F2A37F3042E585006081D6 /* macOS (Extension) */,
+				A10000000000000000000001 /* Shared (Core) */,
 			);
 			name = "anisync Extension (macOS)";
 			packageProductDependencies = (
 			);
 			productName = "anisync Extension (macOS)";
-			productReference = 92F2A37B3042E585006081D6 /* anisync Extension.appex */;
+			productReference = 92F2A37B3042E585006081D6 /* AniSync Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -372,6 +389,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ru,
 				Base,
 			);
 			mainGroup = 92F2A3373042E584006081D6;
@@ -619,30 +637,34 @@
 		};
 		92F2A3AB3042E585006081D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A10000000000000000000002 /* Configuration/Base.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/AniSyncExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W652976H6M;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "anisync Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "AniSync Extension";
+				INFOPLIST_KEY_CFBundleName = "AniSync Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.heeka.anisync.Extension;
-				PRODUCT_NAME = "anisync Extension";
+				PRODUCT_NAME = "AniSync Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -655,30 +677,34 @@
 		};
 		92F2A3AC3042E585006081D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A10000000000000000000002 /* Configuration/Base.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/AniSyncExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W652976H6M;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "anisync Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "AniSync Extension";
+				INFOPLIST_KEY_CFBundleName = "AniSync Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.heeka.anisync.Extension;
-				PRODUCT_NAME = "anisync Extension";
+				PRODUCT_NAME = "AniSync Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -691,25 +717,28 @@
 		};
 		92F2A3B03042E585006081D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A10000000000000000000002 /* Configuration/Base.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/AniSync.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W652976H6M;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
+				ENABLE_USER_SELECTED_FILES = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = anisync;
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = AniSync;
+				INFOPLIST_KEY_CFBundleName = AniSync;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -718,12 +747,12 @@
 					WebKit,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.heeka.anisync;
-				PRODUCT_NAME = anisync;
+				PRODUCT_NAME = AniSync;
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = macosx;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -732,25 +761,28 @@
 		};
 		92F2A3B13042E585006081D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A10000000000000000000002 /* Configuration/Base.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/AniSync.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W652976H6M;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
+				ENABLE_USER_SELECTED_FILES = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = anisync;
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = AniSync;
+				INFOPLIST_KEY_CFBundleName = AniSync;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -759,12 +791,12 @@
 					WebKit,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.heeka.anisync;
-				PRODUCT_NAME = anisync;
+				PRODUCT_NAME = AniSync;
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = macosx;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
