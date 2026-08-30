@@ -1,3 +1,0 @@
-// Copy this file to Local.xcconfig and replace the value with the public
-// client ID from your AniList API client. Never add a client secret.
-ANILIST_CLIENT_ID = 12345
