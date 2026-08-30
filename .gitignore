@@ -7,6 +7,5 @@ build/
 *.hmap
 *.ipa
 !**/xcschemes/*.xcscheme
-Configuration/Local.xcconfig
 .DS_Store
 DerivedData/
